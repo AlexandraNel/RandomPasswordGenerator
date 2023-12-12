@@ -5,6 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
 
@@ -22,6 +23,9 @@ var characterSets = {
   upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", //variable for storing upper case letter options  
   character: "!#$%&'()*+,-./:;<=>?@[/]^_`{|}~" //variable for storing soecial character options  
 };
+
+//I want to aggregate the User Input data into an array, and use that array to create a function with conditional statement to consolidate the user input then run it trhough the random generator
+var userChoices = [PasswordSettings.characterLowerCase, PasswordSettings.characterUpperCase, PasswordSettings.specialCharacter];
 
 //Placing my if/else branch and variable within a function, now stores
 //the characterLength var within it- so now all of these are local within the function
@@ -50,9 +54,44 @@ function askPasswordSpecialCharacter() {
   PasswordSettings.specialCharacter = confirm("Would you like your password to include special characters?");
 }
 
-function generatePassword(){
-
+//This function takes the user input data (User Choices Varaible) and checks if its true ie. selected. then shoots that over to the randomiser function
+function consolidateUserChoices(userChoices){
+  var combinedCharacterSets="";
+    if (userChoices[0] === true){
+    combinedCharacterSets+=characterSets.lowerCase;}
+    if (userChoices[1] === true){
+    combinedCharacterSets+=characterSets.upperCase;}
+    if (userChoices[2] === true){
+    combinedCharacterSets+=characterSets.character;}
+    
+  return combinedCharacterSets;
 }
+
+//I am now going to use my combinedCharacterSets string as a perameter to randomise the selection of the specified length to create the password
+function Randomiser(combinedCharacterSets){
+  var randomPassword = ""; //this is what we are trying to generate
+  var i=0; //while loop does not allow i variable to be difined inside of it like for
+  while (i < PasswordSettings.charactersLength) { //while loops through the index, as long as 0 is less than the user input desired password length
+    var randomIndex = Math.floor(Math.random() * combinedCharacterSets.length); //this gives us a random whole integer
+    randomPassword +=combinedCharacterSets[randomIndex];
+    i++;
+  }  
+
+  return randomPassword
+}
+//have to CALL the function that has been created in order for it to work, these are all the functions running requiring user input
+function generatePassword() {
+  askPasswordLength(); 
+  askPasswordLowerCase();
+  askPasswordUpperCase();
+  askPasswordSpecialCharacter();
+
+  //this now re-establishes the combinesCharacterSets variable based on the function of putting the choices into a string
+  var combinedCharacterSets = consolidateUserChoices(userChoices);
+  
+  return Randomiser(combinedCharacterSets); //returns the generated password
+}
+
 
 
 
@@ -60,9 +99,3 @@ function generatePassword(){
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-function writePassword() { //first function which is to click the button
-askPasswordLength(); //have to CALL the function that has been created in order for it to work
-askPasswordLowerCase();
-askPasswordUpperCase();
-askPasswordSpecialCharacter();
-}
