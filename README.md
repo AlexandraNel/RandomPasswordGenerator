@@ -37,14 +37,15 @@ Full repository can be accessed here:
 ```
 To view repo contents please navigate to the above link there you will find
 -assets folder
-    -css
-    -javascript
+    -gif for readMe
 -readme
 -html
+-css
+-javascript
 
 ```
 
->**Note** All code is held within the assets folder, this excludes the html index and readMe files which are external to this
+>**Note** All code is held within the main repo folder
 
 ## Usage
 
