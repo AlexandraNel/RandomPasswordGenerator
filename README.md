@@ -26,10 +26,10 @@ The following animation shows the web application's appearance and functionality
 ## Installation
 
 Website has been deployed and can be accessed here:
-![Website] ()
+![Website] (https://alexandranel.github.io/RandomPasswordGenerator/)
 
 Full repository can be accessed here:
-![Website] ()
+![Website] (https://github.com/AlexandraNel/RandomPasswordGenerator)
 
 ```
 To view repo contents please navigate to the above link there you will find
