@@ -28,24 +28,23 @@ The following animation shows the web application's appearance and functionality
 
 Website has been deployed and can be accessed here:
 
-![Website](https://alexandranel.github.io/RandomPasswordGenerator/)
+[Website URL](https://alexandranel.github.io/RandomPasswordGenerator/)
 
 Full repository can be accessed here:
 
-![Gif Hub Repository](https://github.com/AlexandraNel/RandomPasswordGenerator)
+[Gif Hub Repository](https://github.com/AlexandraNel/RandomPasswordGenerator)
 
 ```
 To view repo contents please navigate to the above link there you will find
 -assets folder
--development foder
-    -html
     -css
     -javascript
 -readme
+-html
 
 ```
 
->**Note** All code is held within the assets folder, this includes html, css, and javascript files
+>**Note** All code is held within the assets folder, this excludes the html index and readMe files which are external to this
 
 ## Usage
 
