@@ -33,8 +33,13 @@ var userChoices = [PasswordSettings.characterLowerCase, PasswordSettings.charact
 
 function askPasswordLength() {
   PasswordSettings.charactersLength = prompt("Choose a password *length* between 8-128 characters"); //now reassigning my variable locally- also adjusts its meaning globally
-  if (PasswordSettings.charactersLength < 8 || PasswordSettings.charactersLength > 128) { //using an OR statement here allows me to not shorten the else part of the if statement.
-    alert("Please use *length* between 8-128 characters") //if my if statmeent is incorrect alert shows
+ 
+  if (Number.isNaN(parseInt(PasswordSettings.charactersLength))){ //this converts the user input string into a number- if it is not a number paseInt will return Nan
+    alert("Please enter a number") //if Nan returned ie. not a number, the user data is incorrect and this alert shows
+    askPasswordLength() //run this function again if conditions have not been met
+  }else if (PasswordSettings.charactersLength < 8 || PasswordSettings.charactersLength > 128)  //make sure the user input is between 8 and 128 characters
+    {
+    alert("Password length must be between 8-128 characters") //if my if statmeent is incorrect alert shows
     askPasswordLength() //run this function again if conditions have not been met
   }
 }
