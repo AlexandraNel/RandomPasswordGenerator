@@ -20,16 +20,19 @@ This website is used to generate a random password.
 ## Visuals
 
 The following animation shows the web application's appearance and functionality:
-![Website view](./Assets/screen%20record%20generate%20password.gif)
+
+![Functionality Gif](./Assets/screen%20record%20generate%20password.gif)
 
 
 ## Installation
 
 Website has been deployed and can be accessed here:
-![Website] (https://alexandranel.github.io/RandomPasswordGenerator/)
+
+![Website](https://alexandranel.github.io/RandomPasswordGenerator/)
 
 Full repository can be accessed here:
-![Website] (https://github.com/AlexandraNel/RandomPasswordGenerator)
+
+![Gif Hub Repository](https://github.com/AlexandraNel/RandomPasswordGenerator)
 
 ```
 To view repo contents please navigate to the above link there you will find
